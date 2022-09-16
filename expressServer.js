@@ -26,6 +26,10 @@ class ExpressServer {
 			this.app.get('/AddProject/:id', (req, res) => res.sendFile(path.join(__dirname,'html','AddProject.html')));
 			this.app.get('/EditProject', (req, res) => res.sendFile(path.join(__dirname,'html','EditProject.html')));
 			this.app.get('/EditProject/:id', (req, res) => res.sendFile(path.join(__dirname,'html','EditProject.html')));
+			this.app.get('/SignIn', (req, res) => res.sendFile(path.join(__dirname,'html','SignIn.html')));
+			this.app.get('/SignIn/:id', (req, res) => res.sendFile(path.join(__dirname,'html','SignIn.html')));
+			this.app.get('/SearchByDate', (req, res) => res.sendFile(path.join(__dirname,'html','SearchByDate.html')));
+			this.app.get('/SearchByDate/:id', (req, res) => res.sendFile(path.join(__dirname,'html','SearchByDate.html')));
 			
     }
   

@@ -1,25 +1,18 @@
-let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';document.getElementById('ip6ks').onclick = (event) => {
+document.getElementById('ipmoz').onclick = (event) => {
+  console.log("hello");
+  // new comment
+};// Insert js in pDelete as a function
+function pDelete(param) {
+  // insert code here
+}let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';document.getElementById('idaw').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/AddProject' ;}};document.getElementById('ipmoz').onclick = (event) => {
+    {   location.href= '/Dashboard' ;}};document.getElementById('ip6ks').onclick = (event) => {
     event.preventDefault();
-    { 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document.getElementById(key) !== null &&
-          document
-            .getElementById(key)
-            .contains(document.getElementById("ipmoz")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/EditProject/' + transitionId;}};document.getElementById('ig1xv').onclick = (event) => {
+    {   location.href= '/AddProject' ;}};document.getElementById('ipc7pl').onclick = (event) => {
+    event.preventDefault();
+    {   location.href= '/EditProject' ;}};document.getElementById('icdvk2').onclick = (event) => {
+    event.preventDefault();
+    {   location.href= '/SearchByDate' ;}};document.getElementById('ig1xv').onclick = (event) => {
     event.preventDefault();
     let projectId = window.location.pathname.replace('/Dashboard/','');
       if(projectId === '/Dashboard' || projectId === ''){
@@ -38,9 +31,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           }
         });
       }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/Dashboard' ;}}});};document.getElementById('ilgkj').onclick = (event) => {
+    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('ilgkj').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
@@ -59,26 +52,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
       });
      location.href= '/EditProject/' + transitionId;}};document.getElementById('inrut').onclick = (event) => {
     event.preventDefault();
-    let projectId = window.location.pathname.replace('/Dashboard/','');
-      if(projectId === '/Dashboard' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("inrut")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('i7uucq').onclick = (event) => {
+    let projectId = window.location.pathname.replace('/Dashboard/','');let project = new TempApi.Project();project['pName'] = document.querySelector("[annotationname = 'pName']").textContent;project['pdate1'] = document.querySelector("[annotationname = 'pdate1']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate2'] = document.querySelector("[annotationname = 'pdate2']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate3'] = document.querySelector("[annotationname = 'pdate3']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-'); let opts = {project};apiProjectApi.updateproject( projectId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = pName]').textContent = response.body.query.pName ;if (response.body.query.pdate1) {const pdate1IsoFormat = new Date(response.body.query.pdate1); document.querySelector('[annotationname = pdate1]').textContent = pdate1IsoFormat.getDate()+'-'+pdate1IsoFormat.getMonth()+'-'+pdate1IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate1]').textContent='';}if (response.body.query.pdate2) {const pdate2IsoFormat = new Date(response.body.query.pdate2); document.querySelector('[annotationname = pdate2]').textContent = pdate2IsoFormat.getDate()+'-'+pdate2IsoFormat.getMonth()+'-'+pdate2IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate2]').textContent='';}if (response.body.query.pdate3) {const pdate3IsoFormat = new Date(response.body.query.pdate3); document.querySelector('[annotationname = pdate3]').textContent = pdate3IsoFormat.getDate()+'-'+pdate3IsoFormat.getMonth()+'-'+pdate3IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate3]').textContent='';}}});};document.getElementById('i7uucq').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
@@ -97,26 +73,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
       });
      location.href= '/EditProject/' + transitionId;}};document.getElementById('ibfn9f').onclick = (event) => {
     event.preventDefault();
-    let projectId = window.location.pathname.replace('/Dashboard/','');
-      if(projectId === '/Dashboard' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ibfn9f")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('iqfsbf').onclick = (event) => {
+    let projectId = window.location.pathname.replace('/Dashboard/','');let project = new TempApi.Project();project['pName'] = document.querySelector("[annotationname = 'pName']").textContent;project['pdate1'] = document.querySelector("[annotationname = 'pdate1']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate2'] = document.querySelector("[annotationname = 'pdate2']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate3'] = document.querySelector("[annotationname = 'pdate3']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-'); let opts = {project};apiProjectApi.updateproject( projectId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = pName]').textContent = response.body.query.pName ;if (response.body.query.pdate1) {const pdate1IsoFormat = new Date(response.body.query.pdate1); document.querySelector('[annotationname = pdate1]').textContent = pdate1IsoFormat.getDate()+'-'+pdate1IsoFormat.getMonth()+'-'+pdate1IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate1]').textContent='';}if (response.body.query.pdate2) {const pdate2IsoFormat = new Date(response.body.query.pdate2); document.querySelector('[annotationname = pdate2]').textContent = pdate2IsoFormat.getDate()+'-'+pdate2IsoFormat.getMonth()+'-'+pdate2IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate2]').textContent='';}if (response.body.query.pdate3) {const pdate3IsoFormat = new Date(response.body.query.pdate3); document.querySelector('[annotationname = pdate3]').textContent = pdate3IsoFormat.getDate()+'-'+pdate3IsoFormat.getMonth()+'-'+pdate3IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate3]').textContent='';}}});};document.getElementById('iqfsbf').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
@@ -135,26 +94,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
       });
      location.href= '/EditProject/' + transitionId;}};document.getElementById('iej1yb').onclick = (event) => {
     event.preventDefault();
-    let projectId = window.location.pathname.replace('/Dashboard/','');
-      if(projectId === '/Dashboard' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iej1yb")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('iqauu9').onclick = (event) => {
+    let projectId = window.location.pathname.replace('/Dashboard/','');let project = new TempApi.Project();project['pName'] = document.querySelector("[annotationname = 'pName']").textContent;project['pdate1'] = document.querySelector("[annotationname = 'pdate1']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate2'] = document.querySelector("[annotationname = 'pdate2']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate3'] = document.querySelector("[annotationname = 'pdate3']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-'); let opts = {project};apiProjectApi.updateproject( projectId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = pName]').textContent = response.body.query.pName ;if (response.body.query.pdate1) {const pdate1IsoFormat = new Date(response.body.query.pdate1); document.querySelector('[annotationname = pdate1]').textContent = pdate1IsoFormat.getDate()+'-'+pdate1IsoFormat.getMonth()+'-'+pdate1IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate1]').textContent='';}if (response.body.query.pdate2) {const pdate2IsoFormat = new Date(response.body.query.pdate2); document.querySelector('[annotationname = pdate2]').textContent = pdate2IsoFormat.getDate()+'-'+pdate2IsoFormat.getMonth()+'-'+pdate2IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate2]').textContent='';}if (response.body.query.pdate3) {const pdate3IsoFormat = new Date(response.body.query.pdate3); document.querySelector('[annotationname = pdate3]').textContent = pdate3IsoFormat.getDate()+'-'+pdate3IsoFormat.getMonth()+'-'+pdate3IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate3]').textContent='';}}});};document.getElementById('iqauu9').onclick = (event) => {
     event.preventDefault();
-    { 
+    {  
       let transitionId = window.location.href.split('/').at(-1);
       let parentId = "";
       const storedData = window.localStorage.getItem("data");
@@ -173,24 +115,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
       });
      location.href= '/EditProject/' + transitionId;}};document.getElementById('irzmxy').onclick = (event) => {
     event.preventDefault();
-    let projectId = window.location.pathname.replace('/Dashboard/','');
-      if(projectId === '/Dashboard' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("irzmxy")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ibyt7").querySelectorAll( "[dataitem='true']" )].filter(
+    let projectId = window.location.pathname.replace('/Dashboard/','');let project = new TempApi.Project();project['pName'] = document.querySelector("[annotationname = 'pName']").textContent;project['pdate1'] = document.querySelector("[annotationname = 'pdate1']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate2'] = document.querySelector("[annotationname = 'pdate2']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-');project['pdate3'] = document.querySelector("[annotationname = 'pdate3']").textContent.replace(/(?<day>\d+)-(?<month>\d+-)/,'$<month>$<day>-'); let opts = {project};apiProjectApi.updateproject( projectId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = pName]').textContent = response.body.query.pName ;if (response.body.query.pdate1) {const pdate1IsoFormat = new Date(response.body.query.pdate1); document.querySelector('[annotationname = pdate1]').textContent = pdate1IsoFormat.getDate()+'-'+pdate1IsoFormat.getMonth()+'-'+pdate1IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate1]').textContent='';}if (response.body.query.pdate2) {const pdate2IsoFormat = new Date(response.body.query.pdate2); document.querySelector('[annotationname = pdate2]').textContent = pdate2IsoFormat.getDate()+'-'+pdate2IsoFormat.getMonth()+'-'+pdate2IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate2]').textContent='';}if (response.body.query.pdate3) {const pdate3IsoFormat = new Date(response.body.query.pdate3); document.querySelector('[annotationname = pdate3]').textContent = pdate3IsoFormat.getDate()+'-'+pdate3IsoFormat.getMonth()+'-'+pdate3IsoFormat.getFullYear();} else {document.querySelector('[annotationname = pdate3]').textContent='';}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("ibyt7").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {
